@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 const propertiesReader = require("properties-reader");
 const path = require("path");
 const cors = require("cors");;
@@ -68,6 +68,17 @@ async function start() {
       }
     });
 
+    app.post('/collections/products', express.json(), async (req, res, next) => {
+      try {
+        const newOrder = req.body;
+        const result = await req.collection.insertOne(newOrder);
+        // Send the inserted order as the response
+        res.json(result); 
+      } catch (err) {
+        return next(err);
+      }
+    });
+
     app.post('/collections/orders', express.json(), async (req, res, next) => {
       try {
         const newOrder = req.body;
@@ -100,7 +111,7 @@ async function start() {
     app.delete('/collections/products/:id', async (req, res, next) => {
       try {
         const productId = req.params.id;
-        const result = await req.collection.deleteOne({ _id: MongoClient.ObjectId(productId) });
+        const result = await req.collection.deleteOne({ id: parseInt(productId)});
         res.send(result.deletedCount > 0 ? 'Product deleted' : 'No product found to delete');
       } catch (err) {
         return next(err);

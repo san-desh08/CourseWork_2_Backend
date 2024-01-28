@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "65b16845010b3e3bf78f885d"
+  },
+  "id": 2,
+  "title": "Music",
+  "price": 12.99,
+  "location": "Watford",
+  "availability": 5,
+  "cartItem": 0,
+  "icon": "Icons/icons8-music-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16895010b3e3bf78f885f"
+  },
+  "id": 3,
+  "title": "Art",
+  "price": 10.49,
+  "location": "Aldershot",
+  "availability": 9,
+  "cartItem": 0,
+  "icon": "Icons/icons8-art-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b168c7010b3e3bf78f8861"
+  },
+  "id": 4,
+  "title": "Sport",
+  "price": 19.99,
+  "location": "Brentford",
+  "availability": 7,
+  "cartItem": 0,
+  "icon": "Icons/icons8-sport-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b168de010b3e3bf78f8863"
+  },
+  "id": 5,
+  "title": "Physics",
+  "price": 8.99,
+  "location": "Camden Town",
+  "availability": 3,
+  "cartItem": 0,
+  "icon": "Icons/icons8-physics-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16909010b3e3bf78f8865"
+  },
+  "id": 6,
+  "title": "Health",
+  "price": 15.99,
+  "location": "Euston",
+  "availability": 5,
+  "cartItem": 0,
+  "icon": "Icons/icons8-health-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16919010b3e3bf78f8867"
+  },
+  "id": 7,
+  "title": "English",
+  "price": 12.99,
+  "location": "Harrow",
+  "availability": 10,
+  "cartItem": 0,
+  "icon": "Icons/icons8-english-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b1692d010b3e3bf78f8869"
+  },
+  "id": 8,
+  "title": "Law",
+  "price": 10.49,
+  "location": "Central london",
+  "availability": 8,
+  "cartItem": 0,
+  "icon": "Icons/icons8-law-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16941010b3e3bf78f886b"
+  },
+  "id": 9,
+  "title": "History",
+  "price": 19.99,
+  "location": "Arsenal",
+  "availability": 7,
+  "cartItem": 0,
+  "icon": "Icons/icons8-history-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16950010b3e3bf78f886d"
+  },
+  "id": 10,
+  "title": "Geography",
+  "price": 9.99,
+  "location": "Manchester",
+  "availability": 3,
+  "cartItem": 0,
+  "icon": "Icons/icons8-geography-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b16961010b3e3bf78f886f"
+  },
+  "id": 11,
+  "title": "Buniness",
+  "price": 7.99,
+  "location": "Liverpool",
+  "availability": 2,
+  "cartItem": 0,
+  "icon": "Icons/icons8-business-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b1696c010b3e3bf78f8871"
+  },
+  "id": 12,
+  "title": "Coding",
+  "price": 9.99,
+  "location": "Ealing",
+  "availability": 10,
+  "cartItem": 0,
+  "icon": "Icons/icons8-coding-book-100.png"
+},
+{
+  "_id": {
+    "$oid": "65b65f5c2e03e175ada55618"
+  },
+  "id": 14,
+  "title": "Nepali",
+  "price": 15.99,
+  "location": "Wembely",
+  "availability": 6,
+  "cartItem": 0,
+  "icon": "Icons/icons8-math-book-100.png"
+}]
