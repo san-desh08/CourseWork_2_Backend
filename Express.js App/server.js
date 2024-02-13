@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.use("/Icons", express.static(path.join(__dirname, "Icons/")));
+app.use("/Icons", express.static(path.join(__dirname, "/Icons/")));
 
 app.use("/Icons/*", function(req,res){
   res.status(404).send("Sorry, image not found");
@@ -117,27 +117,24 @@ async function start() {
         return next(err);
       }
     });
-
-    // Add this route in your Express.js server file
-app.get('/search', async (req, res) => {
-  try {
-      const searchQuery = req.query.query;
-      const regex = new RegExp(searchQuery, 'i');
-
-      // Perform a case-insensitive search on both "title" and "location"
-      const searchResults = await YourModel.find({
+    app.get('/search', async (req, res, next) => {
+      try {
+        const query = req.query.q;
+        const regex = new RegExp(query, 'i');
+        const searchResults = await req.collection.find({
           $or: [
-              { title: { $regex: regex } },
-              { location: { $regex: regex } }
+            { title: { $regex: regex } },
+            { location: { $regex: regex } }
           ]
-      });
+        }).toArray();
 
-      res.json(searchResults);
-  } catch (error) {
-      console.error('Error in search route:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+        res.json(searchResults);
+
+      } catch (error) {
+        console.error('Error in search route:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+    });
 
 
     app.listen(PORT, () => {
