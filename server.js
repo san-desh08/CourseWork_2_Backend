@@ -117,22 +117,22 @@ async function start() {
         return next(err);
       }
     });
-    //search using title and location
-    app.get('/search', async (req, res) => {
+    app.get('/search', async (req, res, next) => {
       try {
-          const searchQuery = req.query.query;
-          const regex = new RegExp(searchQuery, 'i');
-          const searchResults = await req.collection.find({
-              $or: [
-                  { title: { $regex: regex } },
-                  { location: { $regex: regex } }
-              ]
-          });
+        const query = req.query.q;
+        const regex = new RegExp(query, 'i');
+        const searchResults = await req.collection.find({
+          $or: [
+            { title: { $regex: regex } },
+            { location: { $regex: regex } }
+          ]
+        }).toArray();
 
-          res.json(searchResults);
+        res.json(searchResults);
+
       } catch (error) {
-          console.error('Error in search route:', error);
-          res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error in search route:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
       }
     });
 
