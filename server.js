@@ -137,6 +137,19 @@ async function start() {
     });
 
 
+    // Update operation - Update a product by ID
+    app.put('/collections/products/:id', express.json(), async (req, res, next) => {
+      const productId = req.params.id;
+      const updatedProduct = req.body;
+      try {
+        const result = await req.collection.updateOne({ id: parseInt(productId) }, { $set: updatedProduct });
+        res.json(result.modifiedCount > 0 ? 'Product updated successfully' : 'No product found to update');
+      } catch (err) {
+        return next(err);
+      }
+    });
+    
+
     app.listen(PORT, () => {
       console.log(`Server is running on http://localhost:${PORT}`);
     });
